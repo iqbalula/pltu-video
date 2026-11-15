@@ -1,7 +1,9 @@
 import React from "react";
-import { registerRoot, Composition } from "remotion";
+import { registerRoot, Composition, staticFile } from "remotion";
 import { PLTUComposition } from "./PLTUComposition";
 import { videoMeta } from "./data/scenes";
+
+const voiceover = staticFile("voiceover.mp3");
 
 registerRoot(() => (
   <>
@@ -13,6 +15,7 @@ registerRoot(() => (
       fps={30}
       durationInFrames={videoMeta.totalFrames}
       defaultProps={{}}
+      audio={voiceover}
     />
   </>
 ));

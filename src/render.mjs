@@ -38,7 +38,7 @@ async function main() {
     fs.mkdirSync(outputDir, { recursive: true });
     const outputLocation = path.join(outputDir, "pltu-final.mp4");
 
-    // 5. Render media menggunakan bundleLocation
+    // 5. Render media menggunakan bundleLocation DENGAN AUDIO
     await renderMedia({
       composition,
       serveUrl: bundleLocation,
@@ -47,6 +47,7 @@ async function main() {
       imageFormat: "jpeg",
       jpegQuality: 85,
       concurrency: 2,
+      inputProps: {},
       onProgress: ({ overallProgress }) => {
         console.log(`Progress: ${Math.round(overallProgress * 100)}%`);
       },

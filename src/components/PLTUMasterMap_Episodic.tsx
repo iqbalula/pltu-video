@@ -21,7 +21,7 @@ export const PLTUMasterMap_Episodic: React.FC<EpisodeMapProps> = ({ frame }) => 
       subtitle: "DEMINERALISASI AIR",
       color: colors.scene.demin,
       startFrame: scenesData.find(s => s.id === "demin")?.startFrame || 246,
-      endFrame: scenesData.find(s => s.id === "demin")?.endFrame || 690,
+      endFrame: scenesData.find(s => s.id === "demin")?.endFrame || 591,
       // Camera positions for this episode (zoom-in points)
       shots: [
         { x: 1200, y: 300, label: "TANGKI RAW WATER", zoom: 2.5, duration: 0.2 },
@@ -35,8 +35,8 @@ export const PLTUMasterMap_Episodic: React.FC<EpisodeMapProps> = ({ frame }) => 
       title: "PULVERIZER & BOILER",
       subtitle: "PEMBAKARAN BATU BARA",
       color: colors.scene.boiler,
-      startFrame: scenesData.find(s => s.id === "boiler")?.startFrame || 690,
-      endFrame: scenesData.find(s => s.id === "boiler")?.endFrame || 1310,
+      startFrame: scenesData.find(s => s.id === "boiler")?.startFrame || 591,
+      endFrame: scenesData.find(s => s.id === "boiler")?.endFrame || 906,
       shots: [
         { x: 1200, y: 1300, label: "PULVERIZER - RODA GILING", zoom: 2.5, duration: 0.2 },
         { x: 950, y: 1550, label: "BURNER BATU BARA", zoom: 2.5, duration: 0.25 },
@@ -49,8 +49,8 @@ export const PLTUMasterMap_Episodic: React.FC<EpisodeMapProps> = ({ frame }) => 
       title: "ESP FILTER",
       subtitle: "PENGOLAHAN DEBU & GAS BAKAR",
       color: colors.scene.esp,
-      startFrame: scenesData.find(s => s.id === "ash_esp")?.startFrame || 1310,
-      endFrame: scenesData.find(s => s.id === "ash_esp")?.endFrame || 1850,
+      startFrame: scenesData.find(s => s.id === "ash_esp")?.startFrame || 906,
+      endFrame: scenesData.find(s => s.id === "ash_esp")?.endFrame || 1509,
       shots: [
         { x: 1200, y: 2050, label: "ESP INLET - GAS BAKAR MASUK", zoom: 2.5, duration: 0.2 },
         { x: 900, y: 2200, label: "FIELD 1 - KORONA DISCHARGE", zoom: 2.5, duration: 0.25 },
@@ -63,8 +63,8 @@ export const PLTUMasterMap_Episodic: React.FC<EpisodeMapProps> = ({ frame }) => 
       title: "STEAM GENERATION",
       subtitle: "UAP BERTEKANAN TINGGI",
       color: colors.scene.steam,
-      startFrame: scenesData.find(s => s.id === "steam")?.startFrame || 1850,
-      endFrame: scenesData.find(s => s.id === "steam")?.endFrame || 2470,
+      startFrame: scenesData.find(s => s.id === "steam")?.startFrame || 1509,
+      endFrame: scenesData.find(s => s.id === "steam")?.endFrame || 1671,
       shots: [
         { x: 1200, y: 2550, label: "STEAM DRUM", zoom: 2.5, duration: 0.3 },
         { x: 1200, y: 2650, label: "PIPA UAP 170 BAR / 540°C", zoom: 2.0, duration: 0.35 },
@@ -76,8 +76,8 @@ export const PLTUMasterMap_Episodic: React.FC<EpisodeMapProps> = ({ frame }) => 
       title: "TURBINE & GENERATOR",
       subtitle: "KONVERSI ENERGI MEGAH",
       color: colors.scene.turbine,
-      startFrame: scenesData.find(s => s.id === "turbine_gen")?.startFrame || 2470,
-      endFrame: scenesData.find(s => s.id === "turbine_gen")?.endFrame || 3280,
+      startFrame: scenesData.find(s => s.id === "turbine_gen")?.startFrame || 1671,
+      endFrame: scenesData.find(s => s.id === "turbine_gen")?.endFrame || 1959,
       shots: [
         { x: 1200, y: 2850, label: "TURBIN HP/IP/LP - 3.000 RPM", zoom: 2.5, duration: 0.25 },
         { x: 1200, y: 2950, label: "ROTOR GENERATOR", zoom: 2.5, duration: 0.25 },
@@ -90,8 +90,8 @@ export const PLTUMasterMap_Episodic: React.FC<EpisodeMapProps> = ({ frame }) => 
       title: "STEP-UP TRANSFORMER",
       subtitle: "SUTET 275/500 kV",
       color: colors.scene.trafo,
-      startFrame: scenesData.find(s => s.id === "trafo_sutet")?.startFrame || 3280,
-      endFrame: scenesData.find(s => s.id === "trafo_sutet")?.endFrame || 4416,
+      startFrame: scenesData.find(s => s.id === "trafo_sutet")?.startFrame || 1959,
+      endFrame: scenesData.find(s => s.id === "trafo_sutet")?.endFrame || 2244,
       shots: [
         { x: 1200, y: 3150, label: "TRAFO STEP-UP 20→275 kV", zoom: 2.5, duration: 0.3 },
         { x: 1200, y: 3150, label: "KUMARAN PRIMER & SEKUNDER", zoom: 2.5, duration: 0.25 },
