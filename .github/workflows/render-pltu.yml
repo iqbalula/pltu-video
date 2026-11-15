@@ -28,27 +28,12 @@ jobs:
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -y -f
 
       - name: Bundle Remotion project
-        run: |
-          export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
-          export PUPPETEER_SKIP_DOWNLOAD=true
-          npm run bundle
+        run: npx remotion bundle ./src/Root.tsx ./bundle
 
       - name: Verify bundle output
         run: |
-          echo "=== Checking bundle directory ==="
-          ls -la ./bundle/ 2>/dev/null || echo "bundle/ not found"
-          ls -la ./build/ 2>/dev/null || echo "build/ not found"
-          # Check for index.js in either location
-          if [ -f ./bundle/index.js ]; then
-            echo "Bundle index.js exists in ./bundle"
-          elif [ -f ./build/index.js ]; then
-            echo "Bundle index.js exists in ./build"
-            # Create copy for render step
-            cp -r ./build ./bundle
-          else
-            echo "ERROR: Bundle index.js not found!"
-            exit 1
-          fi
+          ls -la ./bundle/
+          test -f ./bundle/index.html && echo "Bundle index.html exists" || exit 1
 
       - name: Render PLTU video
         env:
