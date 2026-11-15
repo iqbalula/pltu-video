@@ -3,8 +3,8 @@ import { renderMedia, getCompositions, selectComposition } from "@remotion/rende
 
 async function main() {
   try {
-    // Get compositions from the entry point
-    const compositions = await getCompositions("./src/Root.tsx", {
+    // Get compositions from the bundled output
+    const compositions = await getCompositions("./bundle", {
       inputProps: {},
     });
 
@@ -16,7 +16,7 @@ async function main() {
 
     await renderMedia({
       composition,
-      serveUrl: new URL("./src/Root.tsx", import.meta.url).toString(),
+      serveUrl: `file://${process.cwd()}/bundle`,
       outputLocation: "render/pltu-final.mp4",
       codec: "h264",
       imageFormat: "jpeg",

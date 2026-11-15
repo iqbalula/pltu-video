@@ -4,7 +4,8 @@
   "description": "Video education: Proses Kerja PLTU Sampai Menjadi Listrik",
   "main": "src/Root.tsx",
   "scripts": {
-    "build": "node src/render.mjs"
+    "bundle": "remotion bundle ./src/Root.tsx ./bundle --webpack-override=(config => {config.devtool = false; return config;})",
+    "render": "node src/render.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

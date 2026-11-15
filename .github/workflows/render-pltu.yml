@@ -27,11 +27,12 @@ jobs:
           wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -y -f
 
-      - name: Render PLTU video
+      - name: Bundle and Render PLTU video
         run: |
           export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
           export PUPPETEER_SKIP_DOWNLOAD=true
-          npm run build
+          npm run bundle
+          npm run render
 
       - name: Upload render output
         uses: actions/upload-artifact@v4
