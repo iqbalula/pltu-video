@@ -22,23 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Google Chrome
-        run: |
-          wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -y -f
-
-      - name: Bundle Remotion project
-        run: npx remotion bundle ./src/Root.tsx ./bundle
-
-      - name: Verify bundle output
-        run: |
-          ls -la ./bundle/
-          test -f ./bundle/index.html && echo "Bundle index.html exists" || exit 1
-
       - name: Render PLTU video
-        env:
-          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
-          PUPPETEER_SKIP_DOWNLOAD: "true"
         run: npm run render
 
       - name: Upload render output
@@ -46,12 +30,4 @@ jobs:
         with:
           name: pltu-final-mp4
           path: render/pltu-final.mp4
-          retention-days: 30
-
-      - name: Upload render logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: pltu-render-log
-          path: render/pltu-render.log
           retention-days: 30
