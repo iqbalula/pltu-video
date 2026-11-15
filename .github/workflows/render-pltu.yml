@@ -28,21 +28,18 @@ jobs:
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -y -f
 
       - name: Bundle Remotion project
-        run: |
-          export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
-          export PUPPETEER_SKIP_DOWNLOAD=true
-          npm run bundle
+        run: npx remotion bundle ./src/index.ts ./bundle
 
       - name: Verify bundle output
         run: |
           ls -la ./bundle/
-          test -f ./bundle/index.js && echo "Bundle index.js exists" || exit 1
+          test -f ./bundle/index.html && echo "Bundle index.html exists" || exit 1
 
       - name: Render PLTU video
-        run: |
-          export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
-          export PUPPETEER_SKIP_DOWNLOAD=true
-          npm run render
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+        run: npm run render
 
       - name: Upload render output
         uses: actions/upload-artifact@v4
@@ -52,6 +49,7 @@ jobs:
           retention-days: 30
 
       - name: Upload render logs
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: pltu-render-log
