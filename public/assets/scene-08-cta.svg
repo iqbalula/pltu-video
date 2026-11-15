@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <circle cx="200" cy="180" r="120" fill="#450a0a" stroke="#ef4444" stroke-width="6"/>
+  <path d="M200 230 C160 190 130 160 130 135 C130 115 145 100 165 100 C180 100 193 110 200 122 C207 110 220 100 235 100 C255 100 270 115 270 135 C270 160 240 190 200 230 Z" fill="#ef4444"/>
+  <text x="200" y="350" text-anchor="middle" fill="#fca5a5" font-family="sans-serif" font-weight="bold" font-size="22">PAHAMI SISTEM PLTU 💡</text>
+</svg>

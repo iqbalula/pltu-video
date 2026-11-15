@@ -48,7 +48,9 @@ export const PLTUComposition: React.FC = () => {
       }}
     >
       {/* Static background */}
-      <StaticBackground />
+      <StaticBackground>
+        <div />
+      </StaticBackground>
 
       {/* ===== HOOK SCENE (0-8.2s) ===== */}
       {currentScene.id === "hook" && (
@@ -63,7 +65,8 @@ export const PLTUComposition: React.FC = () => {
             justifyContent: "center",
             opacity: cardOpacity,
             transform: `translateY(${cardY}px) scale(${cardScale})`,
-            paddingHorizontal: 40,
+            paddingLeft: "40px",
+            paddingRight: "40px",
           }}
         >
           <HookScene scene={currentScene} isActive={true} progress={sceneProgress} />
@@ -83,7 +86,8 @@ export const PLTUComposition: React.FC = () => {
             justifyContent: "center",
             opacity: cardOpacity,
             transform: `translateY(${cardY}px) scale(${cardScale})`,
-            paddingHorizontal: 40,
+            paddingLeft: "40px",
+            paddingRight: "40px",
           }}
         >
           <CTAScene
@@ -138,7 +142,8 @@ export const PLTUComposition: React.FC = () => {
           fontSize: 11,
           color: "#64748b",
           width: 960,
-          paddingHorizontal: 8,
+          paddingLeft: "8px",
+          paddingRight: "8px",
           fontFamily: typography.fonts.mono,
         }}>
           <span>MULAI</span>

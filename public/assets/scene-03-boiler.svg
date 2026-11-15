@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect x="100" y="80" width="200" height="240" rx="16" fill="#1e293b" stroke="#f97316" stroke-width="6"/>
+  <path d="M200 140 C160 200 150 240 200 280 C250 240 240 200 200 140 Z" fill="#f97316"/>
+  <path d="M200 180 C180 210 175 230 200 260 C225 230 220 210 200 180 Z" fill="#fbbf24"/>
+  <text x="200" y="360" text-anchor="middle" fill="#f97316" font-family="sans-serif" font-weight="bold" font-size="22">BOILER >1.000°C</text>
+</svg>

@@ -1,0 +1,12 @@
+# Storyboard Breakdown: Proses PLTU Lengkap (V2)
+
+| Scene | Judul Scene | Visual Concept | Teks Overlay | Narasi Voiceover | SFX Cue |
+|-------|-------------|----------------|--------------|------------------|---------|
+| 1 | **Hook** | Batu bara + Air → Listrik menyalakan kota | **PROSES LENGKAP PLTU ⚡**<br/>*Dari Air & Batu Bara Jadi Listrik* | "Pernahkah kamu berpikir, bagaimana batu bara dan air biasa bisa menyalakan seluruh kota?..." | Whoosh + Electricity Spark |
+| 2 | **Water Treatment** | Demineralization Plant (Filter ion exchange menghilangkan mineral) | **1. WATER TREATMENT (DEMIN)**<br/>*Bebas Mineral & Anti Korosi Pipa* | "Sebelum masuk Boiler, air mentah diolah dulu di Demineralization Plant. Garam dan mineral dihilangkan total..." | Bubbling + Filter Flow |
+| 3 | **Pulverizer & Boiler** | Pulverizer giling batu bara → Ruang bakar Boiler membara >1.000°C | **2. PULVERIZER & BOILER**<br/>*Giling Halus & Pembakaran >1.000°C* | "Sementara itu, batu bara dihancurkan di Pulverizer jadi serbuk halus, lalu ditiup ke Boiler..." | Grinding + Fire Flame |
+| 4 | **Bottom Ash & ESP** | Abu berat jatuh ke bawah (Bottom Ash), ESP tangkap fly ash dengan elektroda | **3. BOTTOM ASH & ESP FILTER**<br/>*Filtrasi Abu 99.9% Elektroda Listrik* | "Abu berat hasil pembakaran jatuh menjadi Bottom Ash. Sedangkan abu terbang ditangkap ESP hingga 99.9%..." | Ash Drop + Static Electric Zap |
+| 5 | **Steam Generation** | Air Demin murni di pipa Boiler berubah jadi Uap Super Panas High Pressure | **4. STEAM GENERATION**<br/>*Air Demin → Uap Super Panas High Pressure* | "Panas Boiler memanaskan air murni Demin tadi menjadi uap air super panas bertekanan sangat tinggi." | Steam Hissing |
+| 6 | **Turbin & Generator** | Uap putar sudu Turbin 3.000 RPM → Generator medan magnet listrik | **5. TURBIN & GENERATOR**<br/>*3.000 RPM → Generator Listrik* | "Uap bertekanan tinggi menyemprot dan memutar sudu Turbin hingga 3.000 RPM! Poros Turbin memutar Generator..." | Turbine Whine + Generator Hum |
+| 7 | **Trafo & Grid SUTET** | Step-Up Trafo naikkan kV → Menara SUTET → Rumah-rumah | **6. TRAFO STEP-UP & SUTET**<br/>*Listrik Ratusan kV → SUTET → Rumah* | "Listrik dari Generator dinaikkan tegangannya oleh Trafo Step-Up hingga ratusan kilovolt..." | High Voltage Power Zap |
+| 8 | **CTA** | Siklus PLTU lengkap + Tombol Follow & Heart | **SISTEM PLTU CANGGIH 💡**<br/>*Follow untuk konten teknik & sains!* | "Itulah siklus canggih PLTU dari air murni, api, hingga listrik. Follow untuk penjelasan sains menarik lainnya!" | Chime + Heartbeat |

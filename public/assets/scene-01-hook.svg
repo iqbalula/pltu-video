@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="200" cy="200" r="180" fill="url(#bgGlow)"/>
+  <rect x="120" y="180" width="60" height="40" rx="8" fill="#475569" stroke="#94a3b8" stroke-width="4"/>
+  <path d="M160 140 L240 220 M240 140 L160 220" stroke="#38bdf8" stroke-width="8" stroke-linecap="round"/>
+  <polygon points="200,80 220,150 190,150 220,240 170,170 200,170" fill="#fbbf24"/>
+  <text x="200" y="320" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-weight="bold" font-size="22">PLTU POWER GRID</text>
+</svg>

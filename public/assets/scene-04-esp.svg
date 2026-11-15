@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect x="80" y="80" width="240" height="220" rx="12" fill="#3b0764" stroke="#a855f7" stroke-width="6"/>
+  <line x1="140" y1="100" x2="140" y2="280" stroke="#c084fc" stroke-width="6" stroke-dasharray="8 8"/>
+  <line x1="200" y1="100" x2="200" y2="280" stroke="#c084fc" stroke-width="6" stroke-dasharray="8 8"/>
+  <line x1="260" y1="100" x2="260" y2="280" stroke="#c084fc" stroke-width="6" stroke-dasharray="8 8"/>
+  <polygon points="120,280 280,280 200,340" fill="#581c87" stroke="#a855f7" stroke-width="4"/>
+  <text x="200" y="380" text-anchor="middle" fill="#c084fc" font-family="sans-serif" font-weight="bold" font-size="18">ESP FILTER (99.9%) & BOTTOM ASH</text>
+</svg>

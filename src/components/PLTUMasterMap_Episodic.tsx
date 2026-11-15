@@ -1,7 +1,7 @@
 import React from "react";
 import { useCurrentFrame, interpolate, spring } from "remotion";
-import { colors, typography, layout } from "../../styles/tokens";
-import { scenesData, getCurrentScene, videoMeta } from "../../data/scenes";
+import { colors, typography, layout } from "../styles/tokens";
+import { scenesData, getCurrentScene, videoMeta } from "../data/scenes";
 
 interface EpisodeMapProps {
   frame: number;
@@ -652,7 +652,8 @@ export const PLTUMasterMap_Episodic: React.FC<EpisodeMapProps> = ({ frame }) => 
           transform: "translateX(-50%)",
           zIndex: 30,
           textAlign: "center",
-          paddingHorizontal: 40,
+          paddingLeft: "40px",
+          paddingRight: "40px",
         }}
       >
         <div style={{

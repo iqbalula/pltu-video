@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <path d="M200 60 L280 300 L120 300 Z" fill="none" stroke="#fbbf24" stroke-width="8"/>
+  <line x1="160" y1="180" x2="240" y2="180" stroke="#fbbf24" stroke-width="6"/>
+  <line x1="140" y1="240" x2="260" y2="240" stroke="#fbbf24" stroke-width="6"/>
+  <polygon points="200,100 215,160 195,160 215,220 185,170 205,170" fill="#f59e0b"/>
+  <text x="200" y="360" text-anchor="middle" fill="#fbbf24" font-family="sans-serif" font-weight="bold" font-size="20">STEP-UP TRAFO & SUTET</text>
+</svg>
