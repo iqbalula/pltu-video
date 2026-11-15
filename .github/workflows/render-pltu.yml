@@ -24,11 +24,11 @@ jobs:
 
       - name: Install Google Chrome
         run: |
-          wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          wget -q https://google.com
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -y -f
 
       - name: Bundle Remotion project
-        run: npx remotion bundle ./src/index.ts ./bundle
+        run: npm run bundle
 
       - name: Verify bundle output
         run: |
