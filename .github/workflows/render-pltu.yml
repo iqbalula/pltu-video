@@ -31,10 +31,7 @@ jobs:
         run: |
           export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
           export PUPPETEER_SKIP_DOWNLOAD=true
-          npx remotion render ./src/Root.tsx PLTUComposition render/pltu-final.mp4 \
-            --image-format=jpeg \
-            --jpeg-quality=85 \
-            --concurrency=2
+          npm run build
 
       - name: Upload render output
         uses: actions/upload-artifact@v4
