@@ -1,0 +1,51 @@
+name: PLTU Video Render
+
+on:
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+jobs:
+  render-pltu-video:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Google Chrome
+        run: |
+          wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -y -f
+
+      - name: Render PLTU video
+        run: |
+          export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+          export PUPPETEER_SKIP_DOWNLOAD=true
+          npx remotion render ./src/Root.tsx PLTUComposition render/pltu-final.mp4 \
+            --image-format=jpeg \
+            --jpeg-quality=85 \
+            --concurrency=2
+
+      - name: Upload render output
+        uses: actions/upload-artifact@v4
+        with:
+          name: pltu-final-mp4
+          path: render/pltu-final.mp4
+          retention-days: 30
+
+      - name: Upload render logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: pltu-render-log
+          path: render/pltu-render.log
+          retention-days: 30
