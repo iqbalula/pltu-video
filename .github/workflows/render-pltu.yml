@@ -27,11 +27,21 @@ jobs:
           wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -y -f
 
-      - name: Bundle and Render PLTU video
+      - name: Bundle Remotion project
         run: |
           export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
           export PUPPETEER_SKIP_DOWNLOAD=true
           npm run bundle
+
+      - name: Verify bundle output
+        run: |
+          ls -la ./bundle/
+          test -f ./bundle/index.js && echo "Bundle index.js exists" || exit 1
+
+      - name: Render PLTU video
+        run: |
+          export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+          export PUPPETEER_SKIP_DOWNLOAD=true
           npm run render
 
       - name: Upload render output

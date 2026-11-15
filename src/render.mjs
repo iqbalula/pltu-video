@@ -1,12 +1,22 @@
 #!/usr/bin/env node
 import { renderMedia, getCompositions, selectComposition } from "@remotion/renderer";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function main() {
   try {
     // Get compositions from the bundled output
-    const compositions = await getCompositions("./bundle", {
+    const bundlePath = path.resolve(__dirname, "../bundle");
+    console.log(`Bundle path: ${bundlePath}`);
+    
+    const compositions = await getCompositions(bundlePath, {
       inputProps: {},
     });
+
+    console.log(`Found ${compositions.length} compositions:`);
+    compositions.forEach(c => console.log(`  - ${c.id}`));
 
     // Select the PLTUComposition
     const composition = selectComposition({
@@ -16,7 +26,7 @@ async function main() {
 
     await renderMedia({
       composition,
-      serveUrl: `file://${process.cwd()}/bundle`,
+      serveUrl: `file://${bundlePath}`,
       outputLocation: "render/pltu-final.mp4",
       codec: "h264",
       imageFormat: "jpeg",
