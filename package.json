@@ -4,7 +4,7 @@
   "description": "Video education: Proses Kerja PLTU Sampai Menjadi Listrik",
   "main": "src/Root.tsx",
   "scripts": {
-    "build": "node render.mjs"
+    "build": "npx remotion render ./src/Root.tsx PLTUComposition render/pltu-final.mp4 --concurrency=2"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
