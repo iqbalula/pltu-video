@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { bundle } from "@remotion/bundler";
 import { renderMedia, getCompositions } from "@remotion/renderer";
 import path from "path";
 import fs from "fs";
@@ -8,33 +9,39 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function main() {
   try {
-    const bundlePath = path.resolve(__dirname, "../bundle");
-    console.log(`Bundle path: ${bundlePath}`);
+    const entryPoint = path.resolve(__dirname, "./Root.tsx");
+    console.log(`Bundling entry point: ${entryPoint}`);
 
-    // 1. Ambil daftar komposisi dari folder hasil bundle
-    const compositions = await getCompositions(bundlePath, {
+    // 1. Lakukan bundling langsung lewat API (otomatis return path folder valid)
+    const bundleLocation = await bundle({
+      entryPoint,
+    });
+    console.log(`Bundle created at: ${bundleLocation}`);
+
+    // 2. Ambil daftar komposisi dari bundleLocation
+    const compositions = await getCompositions(bundleLocation, {
       inputProps: {},
     });
 
     console.log(`Found ${compositions.length} compositions:`);
     compositions.forEach((c) => console.log(`  - ${c.id}`));
 
-    // 2. Pilih komposisi PLTUComposition menggunakan .find()
+    // 3. Pilih komposisi PLTUComposition
     const composition = compositions.find((c) => c.id === "PLTUComposition");
 
     if (!composition) {
       throw new Error("Composition 'PLTUComposition' tidak ditemukan!");
     }
 
-    // 3. Pastikan folder output 'render/' tersedia
+    // 4. Pastikan folder output 'render/' tersedia
     const outputDir = path.resolve(__dirname, "../render");
     fs.mkdirSync(outputDir, { recursive: true });
     const outputLocation = path.join(outputDir, "pltu-final.mp4");
 
-    // 4. Render media (gunakan bundlePath langsung tanpa prefix file://)
+    // 5. Render media menggunakan bundleLocation
     await renderMedia({
       composition,
-      serveUrl: bundlePath,
+      serveUrl: bundleLocation,
       outputLocation,
       codec: "h264",
       imageFormat: "jpeg",
